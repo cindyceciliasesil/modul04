@@ -14,9 +14,21 @@
 <div class="card">
 <div class="card-body">
 
-<form action="{{ route('books.update',$book->id) }}" method="POST">
+<form action="{{ route('books.update',$book->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
+
+    <div class="mb-3">
+        <label>Gambar Buku</label>
+        <input type="file" name="gambar" class="form-control">
+    </div>
+
+    @if($book->gambar)
+    <div class="mb-3">
+        <label>Gambar Saat Ini:</label><br>
+        <img src="{{ asset('storage/' . $book->gambar) }}" width="100" style="border-radius: 8px;">
+    </div>
+    @endif
 
     <div class="mb-3">
         <label>Kategori</label>

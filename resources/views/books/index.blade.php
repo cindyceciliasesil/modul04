@@ -61,6 +61,7 @@
             <thead class="table-dark">
                 <tr>
                     <th>No</th>
+                    <th>Gambar</th>
                     <th>Judul</th>
                     <th>Penulis</th>
                     <th>Tahun</th>
@@ -73,6 +74,15 @@
                 @foreach($books as $key => $book)
                 <tr>
                     <td>{{ $key + 1 }}</td>
+
+                    <td>
+                        @if($book->gambar)
+                            <img src="{{ asset('storage/' . $book->gambar) }}" width="60" height="80" style="object-fit: cover; border-radius: 6px;">
+                        @else
+                            <span class="text-muted">-</span>
+                        @endif
+                    </td>
+
                     <td>{{ $book->judul }}</td>
                     <td>{{ $book->penulis }}</td>
                     <td>{{ $book->tahun_terbit }}</td>

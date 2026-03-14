@@ -5,7 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BookController;
 
 Route::get('/', function () {
-    return view('welcone');
+    return view('welcome');
 });
 Route::resource('books', BookController::class);
 Route::resource('categories', CategoryController::class);

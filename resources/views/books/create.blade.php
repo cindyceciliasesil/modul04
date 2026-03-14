@@ -14,8 +14,13 @@
 <div class="card">
 <div class="card-body">
 
-<form action="{{ route('books.store') }}" method="POST">
+<form action="{{ route('books.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
+    
+    <div class="mb-3">
+        <label>Gambar Buku</label>
+        <input type="file" name="gambar" class="form-control">
+    </div>
 
     <div class="mb-3">
         <label>Kategori</label>
@@ -49,7 +54,7 @@
         <input type="number" name="stok" class="form-control">
     </div>
 
-    <button class="btn btn-success">Simpan</button>
+    <button type="submit" class="btn btn-primary">Simpan</button>
     <a href="{{ route('books.index') }}" class="btn btn-secondary">Kembali</a>
 
 </form>

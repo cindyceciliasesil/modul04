@@ -10,11 +10,12 @@ class Book extends Model
     use HasFactory;
 
     protected $fillable = [
-        'category_id',
-        'judul',
-        'penulis',
-        'tahun_terbit',
-        'stok'
+    'category_id',
+    'judul',
+    'penulis',
+    'tahun_terbit',
+    'stok',
+    'gambar'
     ];
 
     public function category()
