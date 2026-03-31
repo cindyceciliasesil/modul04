@@ -17,6 +17,21 @@
     </div>
 </nav>
 
+<div style="position: absolute; top: 20px; right: 20px;">
+    <form method="POST" action="/logout">
+        @csrf
+        <button type="submit" style="
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 3px;
+        ">
+            Logout
+        </button>
+    </form>
+</div>
+
 <!-- Hero -->
 <div class="container mt-5">
     <div class="p-5 mb-4 bg-white rounded-4 shadow-sm text-center">
